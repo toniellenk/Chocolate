@@ -56,6 +56,22 @@
             </div>
         </div>
         <div class="form-group">
+            <asp:Label runat="server" AssociatedControlID="txtEndereco" CssClass="col-md-2 control-label">Endereço</asp:Label>
+            <div class="col-md-10">
+                <asp:TextBox runat="server" ID="txtEndereco" CssClass="form-control" />
+                <asp:RequiredFieldValidator runat="server" ControlToValidate="txtEndereco"
+                    CssClass="text-danger" ErrorMessage="O Endereço é de prenchimento obrigatório." />
+            </div>
+        </div>
+        <div class="form-group">
+            <asp:Label runat="server" AssociatedControlID="txtTelefone" CssClass="col-md-2 control-label">Telefone</asp:Label>
+            <div class="col-md-10">
+                <asp:TextBox runat="server" ID="txtTelefone" CssClass="form-control" />
+                <asp:RequiredFieldValidator runat="server" ControlToValidate="txtTelefone"
+                    CssClass="text-danger" ErrorMessage="O Telefone é de prenchimento obrigatório." />
+            </div>
+        </div>
+        <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <asp:Button runat="server" OnClick="CreateUser_Click" Text="Register" CssClass="btn btn-default" />
             </div>
