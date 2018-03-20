@@ -24,7 +24,6 @@ public class BancoDeDados
         var sqlCommand = new SqlCommand(query, _sqlConection);
         var resultado = new DataTable();
         resultado.Load(sqlCommand.ExecuteReader());
-
         _sqlConection.Close();
 
         return resultado;

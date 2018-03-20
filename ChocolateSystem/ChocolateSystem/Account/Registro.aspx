@@ -11,11 +11,11 @@
         <hr />
         <asp:ValidationSummary runat="server" CssClass="text-danger" />
         <div class="form-group">
-            <asp:Label runat="server" AssociatedControlID="NomeUsuario" CssClass="col-md-2 control-label">Nome Usuário</asp:Label>
+            <asp:Label runat="server" AssociatedControlID="Login" CssClass="col-md-2 control-label">Login</asp:Label>
             <div class="col-md-10">
-                <asp:TextBox runat="server" ID="NomeUsuario" CssClass="form-control" />
-                <asp:RequiredFieldValidator runat="server" ControlToValidate="NomeUsuario"
-                    CssClass="text-danger" ErrorMessage="O Nome Usuário é de prenchimento obrigatório." />
+                <asp:TextBox runat="server" ID="Login" CssClass="form-control" />
+                <asp:RequiredFieldValidator runat="server" ControlToValidate="Login"
+                    CssClass="text-danger" ErrorMessage="O Login é de prenchimento obrigatório." />
             </div>
         </div>
         <div class="form-group">
