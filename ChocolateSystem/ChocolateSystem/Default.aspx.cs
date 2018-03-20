@@ -11,4 +11,11 @@ public partial class _Default : Page
     {
 
     }
+    protected void grdDadosProdutos_RowCommand(object sender, GridViewCommandEventArgs e)
+    {
+        if (e.CommandName.Equals("AddCarrinho"))
+        {
+            string idProduto = e.CommandArgument.ToString();
+        }
+    }
 }
