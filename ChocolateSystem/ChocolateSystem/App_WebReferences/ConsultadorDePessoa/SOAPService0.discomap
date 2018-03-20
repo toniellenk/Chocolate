@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://pessoa-hom.tjmt.jus.br/api/SOAPService.svc?xsd=xsd0" filename="SOAPService.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://pessoa-hom.tjmt.jus.br/api/SOAPService.svc?xsd=xsd1" filename="SOAPService0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://pessoa-hom.tjmt.jus.br/api/SOAPService.svc?wsdl=wsdl0" filename="SOAPService.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://pessoa-hom.tjmt.jus.br/api/SOAPService.svc?wsdl" filename="SOAPService0.wsdl" />
+  </Results>
+</DiscoveryClientResultsFile>
