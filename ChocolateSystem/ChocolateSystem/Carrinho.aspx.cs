@@ -25,7 +25,15 @@ public partial class Carrinho : Page
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!Page.IsPostBack)
+            //SalvarCarrihoNoBanco();
             CarregarProdutos();
+    }
+
+    private void SalvarCarrihoNoBanco()
+    {
+        var bancoDeDados = new BancoDeDados();
+        var carrinhoBD = new CarrinhoBD(bancoDeDados);
+        carrinhoBD.SalvaCarrinho(CarrinhoDeCompras);
     }
 
     private void CarregarProdutos()
