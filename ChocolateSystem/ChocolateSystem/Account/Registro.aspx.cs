@@ -7,9 +7,34 @@ using ConsultadorDePessoa;
 
 public partial class Account_Register : Page
 {
-    protected void CreateUser_Click(object sender, EventArgs e)
+    protected void CriarCliente_Click(object sender, EventArgs e)
     {
+        try
+        {
+            var bancoDeDados = new BancoDeDados();
+            var clienteBD = new ClienteBD(bancoDeDados);
+            var novoCliente = PrencherClienteParaSalvamento();
+            clienteBD.CadastraCliente(novoCliente);
 
+            Response.Write("<script>alert('Cadastro realizado com sucesso');</script>");
+
+        }
+        catch (Exception ex)
+        {
+            Response.Write("<script>alert('Não foi possível cadastrar o cliente: '" + ex.Message + ");</script>");
+        }
+    }
+
+    private Cliente PrencherClienteParaSalvamento()
+    {
+        return new Cliente() {
+            Login = Login.Text,
+            Password = Password.Text,
+            Cpf = txtCpf.Text,
+            Nome = txtNomeCompleto.Text,
+            Telefone = txtTelefone.Text,
+            Endereco = txtEndereco.Text,
+        };
     }
 
     protected void ConsultarCpf_Click(object sender, EventArgs e)

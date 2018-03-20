@@ -31,49 +31,45 @@
             <div class="col-md-10">
                 <asp:TextBox runat="server" ID="ConfirmPassword" TextMode="Password" CssClass="form-control" />
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="ConfirmPassword"
-                    CssClass="text-danger" Display="Dynamic" ErrorMessage="The confirm password field is required." />
+                    CssClass="text-danger" Display="Dynamic" ErrorMessage="A Confirmação de Senha é de preenchimento obrigatório." />
                 <asp:CompareValidator runat="server" ControlToCompare="Password" ControlToValidate="ConfirmPassword"
                     CssClass="text-danger" Display="Dynamic" ErrorMessage="As senhas não coincidem" />
             </div>
         </div>
-        <div class="form-group">
-            <asp:Label runat="server" AssociatedControlID="txtCpf" CssClass="col-md-2 control-label">CPF</asp:Label>
-            <div class="col-md-10">
-                <asp:TextBox runat="server" ID="txtCpf" CssClass="form-control" />
+        <div class="form-horizontal">
+            <div class="form-group">
+                <asp:Label runat="server" AssociatedControlID="txtCpf" CssClass="col-md-2 control-label">CPF</asp:Label>
+                <div class="col-md-10">
+                    <asp:TextBox runat="server" ID="txtCpf" CssClass="form-control" />
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <asp:Button runat="server" OnClick="ConsultarCpf_Click" Text="Consultar CPF" CssClass="btn btn-default" />
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <asp:Button runat="server" OnClick="ConsultarCpf_Click" Text="Consultar CPF" CssClass="btn btn-default" />
+                </div>
             </div>
         </div>
         <div class="form-group">
             <asp:Label runat="server" AssociatedControlID="txtNomeCompleto" CssClass="col-md-2 control-label">Nome Completo</asp:Label>
             <div class="col-md-10">
                 <asp:TextBox runat="server" ID="txtNomeCompleto" CssClass="form-control" />
-                <asp:RequiredFieldValidator runat="server" ControlToValidate="txtNomeCompleto"
-                    CssClass="text-danger" ErrorMessage="O Nome Completo é de prenchimento obrigatório." />
             </div>
         </div>
         <div class="form-group">
             <asp:Label runat="server" AssociatedControlID="txtEndereco" CssClass="col-md-2 control-label">Endereço</asp:Label>
             <div class="col-md-10">
                 <asp:TextBox runat="server" ID="txtEndereco" CssClass="form-control" />
-                <asp:RequiredFieldValidator runat="server" ControlToValidate="txtEndereco"
-                    CssClass="text-danger" ErrorMessage="O Endereço é de prenchimento obrigatório." />
             </div>
         </div>
         <div class="form-group">
             <asp:Label runat="server" AssociatedControlID="txtTelefone" CssClass="col-md-2 control-label">Telefone</asp:Label>
             <div class="col-md-10">
                 <asp:TextBox runat="server" ID="txtTelefone" CssClass="form-control" />
-                <asp:RequiredFieldValidator runat="server" ControlToValidate="txtTelefone"
-                    CssClass="text-danger" ErrorMessage="O Telefone é de prenchimento obrigatório." />
             </div>
         </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <asp:Button runat="server" OnClick="CreateUser_Click" Text="Register" CssClass="btn btn-default" />
+                <asp:Button runat="server" OnClick="CriarCliente_Click" Text="Registrar" CssClass="btn btn-default" />
             </div>
         </div>
     </div>

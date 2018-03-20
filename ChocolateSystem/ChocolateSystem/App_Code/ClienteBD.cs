@@ -9,13 +9,34 @@ using System.Web;
 /// </summary>
 public class ClienteBD
 {
-    public Cliente RetornarClienteCadastrado(BancoDeDados bancoDeDados, int codigoCliente)
+    private BancoDeDados _bancoDeDados;
+
+    public ClienteBD(BancoDeDados bancoDeDados)
+    {
+        _bancoDeDados = bancoDeDados;
+    }
+
+
+    public Cliente RetornarClienteCadastrado(int codigoCliente)
     {
         var listaclientes = new List<Cliente>();
         var queryConsulta = "select * from clientes where IdCliente = " + codigoCliente.ToString();
-        var massaDados = bancoDeDados.BuscaMassaDeDados(queryConsulta);
+        var massaDados = _bancoDeDados.BuscaMassaDeDados(queryConsulta);
 
         return ConverteDatarowEmObjeto(massaDados.Rows[0]);
+    }
+
+    public void CadastraCliente(Cliente cliente)
+    {
+        var query = "insert into Clientes values (";
+        query += "'" + cliente.Login + "',";
+        query += "'" + cliente.Password + "',";
+        query += "'" + cliente.Cpf + "',";
+        query += "'" + cliente.Nome + "',";
+        query += "'" + cliente.Telefone + "',";
+        query += "'" + cliente.Endereco + "')";
+
+        _bancoDeDados.ExecutaComando(query);
     }
 
     private Cliente ConverteDatarowEmObjeto(DataRow item)

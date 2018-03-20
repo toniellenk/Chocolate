@@ -1,13 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
 
 public partial class _Default : Page
 {
+    public CarrinhoCompras CarrinhoDeCompras
+    {
+        get {
+            if (Session["_carrinhoCompras"] == null)
+            {
+                Session["_carrinhoCompras"] = new CarrinhoCompras();
+            }
+
+            return (CarrinhoCompras)Session["_carrinhoCompras"]; }
+
+        set {
+            Session["_carrinhoCompras"] = value;
+        }
+    }
+
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!Page.IsPostBack)
@@ -35,6 +48,19 @@ public partial class _Default : Page
         if (e.CommandName.Equals("AddCarrinho"))
         {
             string idProduto = e.CommandArgument.ToString();
+            InserirProdutoNoCarrinho(Convert.ToInt32(idProduto));
+        }
+    }
+
+    private void InserirProdutoNoCarrinho(int idProduto)
+    {
+        if (CarrinhoDeCompras.ListaProdutos == null)
+        {
+            CarrinhoDeCompras.ListaProdutos = new List<Produto>() { new Produto() { IdProduto = idProduto } };
+        }
+        else
+        {
+            CarrinhoDeCompras.ListaProdutos.Add(new Produto() { IdProduto = idProduto });
         }
     }
 }

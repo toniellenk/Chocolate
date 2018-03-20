@@ -3,8 +3,8 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="jumbotron">
-        <h2>Bem vindo ao chocolate Web!</h2>
-        <p class="lead">Escolha os seus chcolates e seja feliz.</p>
+        <h2>Bem vindo a loja de chocolates.</h2>
+        <p class="lead">Escolha os seus chocolates e seja feliz.</p>
     </div>
     <asp:GridView ID="grdDadosProdutos" runat="server" AutoGenerateColumns="false" OnRowCommand="grdDadosProdutos_RowCommand">
         <Columns>        
