@@ -14,7 +14,7 @@
             <asp:TemplateField>
                 <ItemTemplate>
                     <asp:Button ID="addCarrinho" runat="server" CommandName="AddCarrinho" Text="Add. Carrinho"
-                        CommandArgument='<%# DataBinder.Eval(Container.DataItem, "ProductID")%>' />
+                        CommandArgument='<%# DataBinder.Eval(Container.DataItem, "IdProduto")%>' />
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>
